@@ -148,12 +148,19 @@ button {
   position: relative;
 }
 
+.nav-item.active::after{
+  width: 100%;
+}
+
+.nav-item.active .nav-link {
+  color: var(--ocean);
+}
 .nav-item::after {
 content:"";
 position: absolute;
 width: 0;
 background-color: var(--ocean);
-bottom: -20px;
+bottom: -25px;
 left: 0;
 height: 3px;
 border-radius: 2px;
@@ -438,7 +445,6 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   border-color: var(--ocean);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12),
     0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
 }
 
 .portfolio-button {
@@ -453,6 +459,8 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
   padding: 12px 24px;
   font-weight: 500;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-title-list {
@@ -467,7 +475,6 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   flex-direction: column;
   background: var(--white);
   transition: 250ms;
-  
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -650,24 +657,15 @@ border-top: unset;
     border: 0px;
     border-radius: 50px;
     position: absolute;
-    left: 100%;
-    top: 0;
+    right:24px;
+    top: 24px;
     fill: var(--cornflower);
     stroke-width: 1px;
     stroke: rgba(0, 0, 0, 0.10);
     cursor: pointer;
   }
   
-  .modal-close {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 100%;
-    top: 0;
-    border: 0;
-    position: absolute;
-    padding: 8px;
-  }
+
   
   .modal.is-hidden {
     visibility: hidden;
@@ -677,6 +675,6 @@ border-top: unset;
 
   .modal.is-hidden, 
   .modal-content {
-    transform: scale(0.5);
+    transform: scale(0.95);
   }
   
